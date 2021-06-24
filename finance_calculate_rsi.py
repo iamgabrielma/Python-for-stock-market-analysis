@@ -9,6 +9,7 @@ tickerList = ['MU','INTC', 'BP', 'TROX', 'MMM', 'UL', 'SFTBY', 'CRSR', 'ATVI', '
 
 def calc_rsi(t):
 	
+	stockDictionary = {}
 	# Initial data source
 	ticker = pdr.get_data_yahoo(t, dt.datetime(2021,1,1), dt.datetime.now())
 	
@@ -43,12 +44,21 @@ def calc_rsi(t):
 	oversold = 30
 	overbought = 70
 
+	## Filling dictionary
+	stockDictionary['ticker'] = t
+	stockDictionary['rsi'] = str(latest_rsi_value)
+
 	if latest_rsi_value.astype(int) > overbought:
+		stockDictionary['signal'] = 'SELL signal'
 		print(t + ' RSI: ' + str(latest_rsi_value) + ' - SELL signal')
 	elif latest_rsi_value.astype(int) < oversold:
+		stockDictionary['signal'] = 'BUY signal'
 		print(t + ' RSI: ' + str(latest_rsi_value) + ' - BUY signal')
 	else:
+		stockDictionary['signal'] = 'Neutral signal'
 		print(t + ' RSI: ' + str(latest_rsi_value) + ' - Neutral signal')
+
+	print(stockDictionary)
 
 for t in tickerList:
 	calc_rsi(t)
