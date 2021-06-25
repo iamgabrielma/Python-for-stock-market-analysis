@@ -157,98 +157,68 @@
     },
     {
         "id": 26,
-        "ticker": "CRSR",
-        "rsi": "52.1528427704633",
-        "signal": "Neutral signal"
-    },
-    {
-        "id": 27,
         "ticker": "INTC",
         "rsi": "53.276654725069854",
         "signal": "Neutral signal"
     },
     {
-        "id": 28,
+        "id": 27,
         "ticker": "MU",
         "rsi": "75.99626114377652",
         "signal": "SELL signal"
     },
     {
-        "id": 27,
-        "ticker": "INTC",
-        "rsi": "53.276654725069854",
-        "signal": "Neutral signal"
-    },
-    {
-        "id": 30,
+        "id": 28,
         "ticker": "BP",
         "rsi": "59.829390336870006",
         "signal": "Neutral signal"
     },
     {
-        "id": 31,
+        "id": 29,
         "ticker": "TROX",
         "rsi": "67.49025109129047",
         "signal": "Neutral signal"
     },
     {
-        "id": 16,
-        "ticker": "MMM",
-        "rsi": "37.766020558703424",
-        "signal": "Neutral signal"
-    },
-    {
-        "id": 33,
+        "id": 30,
         "ticker": "UL",
         "rsi": "18.647562078298222",
         "signal": "BUY signal"
     },
     {
-        "id": 34,
+        "id": 31,
         "ticker": "SFTBY",
         "rsi": "72.72990213214061",
         "signal": "SELL signal"
     },
     {
-        "id": 26,
+        "id": 32,
         "ticker": "CRSR",
         "rsi": "52.1528427704633",
         "signal": "Neutral signal"
     },
     {
-        "id": 12,
-        "ticker": "ATVI",
-        "rsi": "55.52981407358297",
-        "signal": "Neutral signal"
-    },
-    {
-        "id": 37,
+        "id": 33,
         "ticker": "EA",
         "rsi": "6.378527605016572",
         "signal": "BUY signal"
     },
     {
-        "id": 38,
+        "id": 34,
         "ticker": "PINS",
         "rsi": "81.38445850692972",
         "signal": "SELL signal"
     },
     {
-        "id": 39,
+        "id": 35,
         "ticker": "ADBE",
         "rsi": "87.15808076703871",
         "signal": "SELL signal"
     },
     {
-        "id": 40,
+        "id": 36,
         "ticker": "PSTH",
         "rsi": "51.45541146189195",
-        "signal": "Neutral signal"
-    },
-    {
-        "id": 9,
-        "ticker": "NIO",
-        "rsi": "49.53477037759107",
         "signal": "Neutral signal"
     }
 ]
