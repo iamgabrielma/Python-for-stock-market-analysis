@@ -5,21 +5,26 @@ import sys
 import json
 
 # This version of the script has been created specifically to create JSON output for the iOS app.
-
+data_source = ""
 _debug_show_details = False
 
-# 1 - Read tickers from file
-def read_tickers_from_txt(market):
 
-	with open(market) as file:
+def read_tickers_from_txt(data_source):
+	'''
+	Reads all company tickers fed to the function, line by line, and returns a list
+	'''
+	print("Reading data from " + str(sys.argv))
+	#exit()
+	with open(data_source) as file:
 		#print(file.readlines()) # it comes with a \n character:
 		lines = [line.rstrip() for line in file]
 	
 	return lines
 
-
-# 2 - Calculate their RSI
 def calc_rsi(t, ticker_id):
+	'''
+	Calculates RSI
+	'''
 	 
 	stockDictionary = {}
 
@@ -81,26 +86,35 @@ def calc_rsi(t, ticker_id):
 
 	return stockDictionary
 
-#3 - Convert data to JSON
 def convertToJson(mydict):
-
+	''' 
+	Converts data to JSON
+	''' 
+	subfolder_path = "/testData/"
 	today = dt.date.today()
 	today.strftime("%Y-%m-%d")
 	#print(today)
 	#sys.exit()
-	with open( str(today) + "-rsi.json", "w") as file:
+	with open( subfolder_path + str(today) + "-rsi.json", "w") as file:
 		json.dump(mydict, file, indent = 4)
 
 
 def main():
+	'''
+	Runs the main script
+	'''
 	print("Starting script...")
 
-	# Creating the ticker list from the txt file:
-	tickerList = read_tickers_from_txt("custom-tickers.txt")
-	print(str(len(tickerList)) + " tickers in " + "custom-tickers.txt")
-	output_list = []
+	# Creating the ticker list from the txt file, use custom-tickers.txt by default unless we pass a different list.
+	if (sys.argv[1]) == None:
+		data_source = "custom-tickers.txt"
+	else:
+		data_source = sys.argv[1]
 
-	#exit()
+	tickerList = read_tickers_from_txt(data_source)
+	
+	print(str(len(tickerList)) + " tickers in " + data_source)
+	output_list = []
 	
 	try:
 		for t in tickerList:
