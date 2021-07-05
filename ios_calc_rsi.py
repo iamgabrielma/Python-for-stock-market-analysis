@@ -106,8 +106,9 @@ def main():
 	print("Starting script...")
 
 	# Creating the ticker list from the txt file, use custom-tickers.txt by default unless we pass a different list.
-	if (sys.argv[1]) == None:
-		data_source = "custom-tickers.txt"
+	# Check if a parameter exists first:
+	if (len(sys.argv)) <= 1:
+		data_source = "custom-tickers.txt" # If no aguments have been passed, use the default
 	else:
 		data_source = sys.argv[1]
 
