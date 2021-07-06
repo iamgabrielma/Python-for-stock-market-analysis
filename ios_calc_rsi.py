@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-import pandas_datareader as pdr
+from pandas_datareader import data as pdr
 import datetime as dt
 import sys
 import json
+import yfinance as yfin
+
+# This override fixes (for the moment) get_data_yahoo not retrieving the stock data: https://github.com/pydata/pandas-datareader/issues/868#issuecomment-873381817
+yfin.pdr_override()
 
 # This version of the script has been created specifically to create JSON output for the iOS app.
 data_source = ""
