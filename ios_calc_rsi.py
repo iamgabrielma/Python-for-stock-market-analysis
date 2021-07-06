@@ -94,13 +94,15 @@ def convertToJson(mydict):
 	''' 
 	Converts data to JSON
 	''' 
-	subfolder_path = "/testData/"
+	print("Creating JSON file...")
+	#subfolder_path = "/testData/"
 	today = dt.date.today()
 	today.strftime("%Y-%m-%d")
 	#print(today)
 	#sys.exit()
-	with open( subfolder_path + str(today) + "-rsi.json", "w") as file:
+	with open( str(today) + "-rsi.json", "w") as file:
 		json.dump(mydict, file, indent = 4)
+	print("Done!")
 
 
 def main():
@@ -122,8 +124,9 @@ def main():
 	output_list = []
 	
 	try:
+		print("Analyzing...")
 		for t in tickerList:
-			print("Analyzing " + t )
+			print(t, end="\r")
 			ticker_id = tickerList.index(t) # assign a ticker_id so later we can parse JSON properly via iOS app.
 			item = calc_rsi(t, ticker_id) # calculates the RSI for each item
 			output_list.append(item) # adds all info to a list of dictionaries
