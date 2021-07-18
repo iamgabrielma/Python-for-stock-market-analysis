@@ -64,7 +64,7 @@ def calc_rsi(t, ticker_id):
 	# Latest RSI value:
 	length_of_dataframe = len(ticker)
 	latest_rsi_value = ticker['RSI'][length_of_dataframe-1]
-	print(type(latest_rsi_value)) # numpy.float64
+	#print(type(latest_rsi_value)) # numpy.float64
 	latest_rsi_value = latest_rsi_value.round(decimals=2)
 	oversold = 30
 	overbought = 70
@@ -131,9 +131,17 @@ def main():
 	
 	print(str(len(tickerList)) + " tickers in " + data_source)
 	output_list = []
+	#latestFetch["Date"] = dt.date.today().strftime("%Y-%m-%d")
+	#output_list.append(latestFetch)
 	
 	try:
 		print("Analyzing...")
+
+		## Adding fetch time as a dict object
+		latestFetch = {}
+		latestFetch["date"] = dt.date.today().strftime("%Y-%m-%d")
+		output_list.append(latestFetch)
+
 		for t in tickerList:
 			print(t, end="\r")
 			ticker_id = tickerList.index(t) # assign a ticker_id so later we can parse JSON properly via iOS app.
