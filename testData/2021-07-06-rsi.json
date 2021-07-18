@@ -1,0 +1,224 @@
+[
+    {
+        "id": 0,
+        "ticker": "AMZN",
+        "rsi": "81.6725859711178",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 1,
+        "ticker": "GOOGL",
+        "rsi": "93.76357520641128",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 2,
+        "ticker": "AAPL",
+        "rsi": "97.38069757520866",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 3,
+        "ticker": "MSFT",
+        "rsi": "94.4098933306479",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 4,
+        "ticker": "AMD",
+        "rsi": "89.6251318144647",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 5,
+        "ticker": "RTX",
+        "rsi": "70.55302908701776",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 6,
+        "ticker": "TSM",
+        "rsi": "51.94786478782363",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 7,
+        "ticker": "TME",
+        "rsi": "13.709172871717556",
+        "signal": "BUY signal"
+    },
+    {
+        "id": 8,
+        "ticker": "JD",
+        "rsi": "32.61943282948516",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 9,
+        "ticker": "NIO",
+        "rsi": "53.36118654652242",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 10,
+        "ticker": "PLTR",
+        "rsi": "12.233933689375377",
+        "signal": "BUY signal"
+    },
+    {
+        "id": 11,
+        "ticker": "TCEHY",
+        "rsi": "17.860273869836476",
+        "signal": "BUY signal"
+    },
+    {
+        "id": 12,
+        "ticker": "ATVI",
+        "rsi": "49.01645907885567",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 13,
+        "ticker": "DKNG",
+        "rsi": "32.9067819433363",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 14,
+        "ticker": "V",
+        "rsi": "75.80249195101214",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 15,
+        "ticker": "BABA",
+        "rsi": "20.11715965078251",
+        "signal": "BUY signal"
+    },
+    {
+        "id": 16,
+        "ticker": "MMM",
+        "rsi": "87.47007698920885",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 17,
+        "ticker": "NET",
+        "rsi": "60.114636356150136",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 18,
+        "ticker": "PG",
+        "rsi": "81.50137442950869",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 19,
+        "ticker": "CRM",
+        "rsi": "81.35376697403564",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 20,
+        "ticker": "MNMD",
+        "rsi": "22.5218674855641",
+        "signal": "BUY signal"
+    },
+    {
+        "id": 21,
+        "ticker": "AQB",
+        "rsi": "36.40785723077754",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 22,
+        "ticker": "AGC",
+        "rsi": "7.5513163487069335",
+        "signal": "BUY signal"
+    },
+    {
+        "id": 23,
+        "ticker": "AMCR",
+        "rsi": "55.35265133092172",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 24,
+        "ticker": "SWBI",
+        "rsi": "36.501189858366",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 25,
+        "ticker": "ORCL",
+        "rsi": "90.73506795362927",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 26,
+        "ticker": "INTC",
+        "rsi": "63.153867504582415",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 27,
+        "ticker": "MU",
+        "rsi": "34.79966691114625",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 28,
+        "ticker": "BP",
+        "rsi": "60.74983565286171",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 29,
+        "ticker": "TROX",
+        "rsi": "65.63548830517063",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 30,
+        "ticker": "UL",
+        "rsi": "45.46751804690841",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 31,
+        "ticker": "SFTBY",
+        "rsi": "56.592760582287326",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 32,
+        "ticker": "CRSR",
+        "rsi": "16.99085974283372",
+        "signal": "BUY signal"
+    },
+    {
+        "id": 33,
+        "ticker": "EA",
+        "rsi": "63.08768389564763",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 34,
+        "ticker": "PINS",
+        "rsi": "69.94819498620242",
+        "signal": "Neutral signal"
+    },
+    {
+        "id": 35,
+        "ticker": "ADBE",
+        "rsi": "79.84115248475031",
+        "signal": "SELL signal"
+    },
+    {
+        "id": 36,
+        "ticker": "PSTH",
+        "rsi": "36.90070493807312",
+        "signal": "Neutral signal"
+    }
+]

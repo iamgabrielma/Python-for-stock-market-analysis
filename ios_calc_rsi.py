@@ -4,6 +4,7 @@ import datetime as dt
 import sys
 import json
 import yfinance as yfin
+import os
 
 # This override fixes (for the moment) get_data_yahoo not retrieving the stock data: https://github.com/pydata/pandas-datareader/issues/868#issuecomment-873381817
 yfin.pdr_override()
@@ -17,7 +18,6 @@ def read_tickers_from_txt(data_source):
 	'''
 	Reads all company tickers fed to the function, line by line, and returns a list
 	'''
-	print("Reading data from " + str(sys.argv))
 	#exit()
 	with open(data_source) as file:
 		#print(file.readlines()) # it comes with a \n character:
@@ -53,6 +53,7 @@ def calc_rsi(t, ticker_id):
 	print('-----------------------------')
 	#print(ticker)
 	ticker['RSI'] = 100 - ( 100 / (1+rs) )
+	#ticker['RSI'] = str(round(ticker['RSI'], 2))
 	#print(ticker['RSI'])
 
 	# Skip first 14 days to have real values , no need because we're checking 6 months back
@@ -63,6 +64,8 @@ def calc_rsi(t, ticker_id):
 	# Latest RSI value:
 	length_of_dataframe = len(ticker)
 	latest_rsi_value = ticker['RSI'][length_of_dataframe-1]
+	print(type(latest_rsi_value)) # numpy.float64
+	latest_rsi_value = latest_rsi_value.round(decimals=2)
 	oversold = 30
 	overbought = 70
 
@@ -70,21 +73,25 @@ def calc_rsi(t, ticker_id):
 	stockDictionary['ticker'] = t
 	stockDictionary['rsi'] = str(latest_rsi_value)
 
+	# IMPLEMENTING EMA:
+	stockDictionary['ema100'] = ""
+	stockDictionary['ema200'] = ""
+
 
 	if latest_rsi_value.astype(int) > overbought:
 
-		stockDictionary['signal'] = 'SELL signal'
-		print(t + ' RSI: ' + str(latest_rsi_value) + ' - SELL')
+		stockDictionary['signal'] = 'Sell'
+		print(t + ' RSI: ' + str(latest_rsi_value) + ' - Sell')
 
 	elif latest_rsi_value.astype(int) < oversold:
 	#elif latest_rsi_value < oversold:
 		
-		stockDictionary['signal'] = 'BUY signal'
-		print(t + ' RSI: ' + str(latest_rsi_value) + ' - BUY')
+		stockDictionary['signal'] = 'Buy'
+		print(t + ' RSI: ' + str(latest_rsi_value) + ' - Buy')
 	else:
 		#print(type(latest_rsi_value))
 		#print(type(oversold))
-		stockDictionary['signal'] = 'Neutral signal'
+		stockDictionary['signal'] = 'Neutral'
 		print(t + ' RSI: ' + str(latest_rsi_value) + ' - Neutral')
 
 
@@ -94,7 +101,7 @@ def convertToJson(mydict):
 	''' 
 	Converts data to JSON
 	''' 
-	print("Creating JSON file...")
+	print("Creating JSON file at..." + str(os.getcwd()))
 	#subfolder_path = "/testData/"
 	today = dt.date.today()
 	today.strftime("%Y-%m-%d")
@@ -118,6 +125,8 @@ def main():
 	else:
 		data_source = sys.argv[1]
 
+	print("Reading data from " + data_source)
+	## 1. READ TICKERS WE'LL ANALYZE
 	tickerList = read_tickers_from_txt(data_source)
 	
 	print(str(len(tickerList)) + " tickers in " + data_source)
@@ -128,6 +137,7 @@ def main():
 		for t in tickerList:
 			print(t, end="\r")
 			ticker_id = tickerList.index(t) # assign a ticker_id so later we can parse JSON properly via iOS app.
+			## 2. CALCULATE RSI
 			item = calc_rsi(t, ticker_id) # calculates the RSI for each item
 			output_list.append(item) # adds all info to a list of dictionaries
 		convertToJson(output_list) # At this point we have a list of all items, moving to iOS.	

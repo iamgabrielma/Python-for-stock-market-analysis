@@ -1,0 +1,3 @@
+# ios_calc_rsi.py
+pandas-datareader-0.10.0
+yfinance-0.1.63
