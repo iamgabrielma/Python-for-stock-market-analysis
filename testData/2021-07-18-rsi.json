@@ -1,0 +1,37 @@
+[
+    {
+        "date": "2021-07-18"
+    },
+    {
+        "id": 0,
+        "ticker": "AAPL",
+        "rsi": "47.18",
+        "ema100": "",
+        "ema200": "",
+        "signal": "Neutral"
+    },
+    {
+        "id": 1,
+        "ticker": "AMD",
+        "rsi": "7.28",
+        "ema100": "",
+        "ema200": "",
+        "signal": "Buy"
+    },
+    {
+        "id": 2,
+        "ticker": "RTX",
+        "rsi": "9.64",
+        "ema100": "",
+        "ema200": "",
+        "signal": "Buy"
+    },
+    {
+        "id": 3,
+        "ticker": "TME",
+        "rsi": "14.79",
+        "ema100": "",
+        "ema200": "",
+        "signal": "Buy"
+    }
+]
