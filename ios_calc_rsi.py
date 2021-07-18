@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
+import pandas as pd
 from pandas_datareader import data as pdr
+import pandas_ta as ta
+
 import datetime as dt
 import sys
 import json
 import yfinance as yfin
+#import yahoo_fin
+#from yahoo_fin import stock_info as si
 import os
 
 # This override fixes (for the moment) get_data_yahoo not retrieving the stock data: https://github.com/pydata/pandas-datareader/issues/868#issuecomment-873381817
@@ -12,6 +17,9 @@ yfin.pdr_override()
 # This version of the script has been created specifically to create JSON output for the iOS app.
 data_source = ""
 _debug_show_details = False
+_debug_print_date_in_json = False
+
+df = pd.DataFrame() # Pandas empty dataframe
 
 
 def read_tickers_from_txt(data_source):
@@ -24,6 +32,30 @@ def read_tickers_from_txt(data_source):
 		lines = [line.rstrip() for line in file]
 	
 	return lines
+
+def calc_sma(ticker, period):
+
+	#ticker = "AAPL"
+	start = dt.datetime(2020,1,1)
+	end = dt.datetime.now()
+	data = pdr.get_data_yahoo(ticker, start, end)
+	
+	if period == 100:
+		data['MA100'] = data['Close'].rolling(100).mean()
+		sma = str(data['MA100'].iloc[-1].round(decimals=2))
+	
+	elif period == 200:
+		data['MA200'] = data['Close'].rolling(200).mean()
+		sma = str(data['MA200'].iloc[-1].round(decimals=2))
+	else:
+		sma = "Null"
+
+	return sma
+
+
+# def calc_ema200():
+
+# 	pass
 
 def calc_rsi(t, ticker_id):
 	'''
@@ -74,8 +106,12 @@ def calc_rsi(t, ticker_id):
 	stockDictionary['rsi'] = str(latest_rsi_value)
 
 	# IMPLEMENTING EMA:
-	stockDictionary['ema100'] = ""
-	stockDictionary['ema200'] = ""
+	#try:
+	stockDictionary['ema100'] = str(calc_sma(t, 100))
+	stockDictionary['ema200'] = str(calc_sma(t, 200))
+		#stockDictionary['ema200'] = calc_ema200()
+	#except:
+		#print("Failed to calculate EMA100")
 
 
 	if latest_rsi_value.astype(int) > overbought:
@@ -138,9 +174,10 @@ def main():
 		print("Analyzing...")
 
 		## Adding fetch time as a dict object
-		latestFetch = {}
-		latestFetch["date"] = dt.date.today().strftime("%Y-%m-%d")
-		output_list.append(latestFetch)
+		if _debug_print_date_in_json == True:
+			latestFetch = {}
+			latestFetch["date"] = dt.date.today().strftime("%Y-%m-%d")
+			output_list.append(latestFetch)
 
 		for t in tickerList:
 			print(t, end="\r")
