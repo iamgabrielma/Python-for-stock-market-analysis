@@ -5,3 +5,4 @@ This is a compendium of different Python scripts that I'm developing in order to
 - finance_calculate_rsi.py : Calculates the RSI from a list of stocks and returns its signal ( neutral, oversold, or overbought ) using Yahoo Finance data.
 - finance_calculate_ema100.py: Calculates the Exponential Moving Average for the last 100 sessions using Yahoo Finance data.
 - ibkr_calculate_ema100.py : Calculates the Exponential Moving Average for the last 100 sessions using the TWS API ( Interactive Brokers ).
+- ios_calc_rsi.py : This is the back-end for the iOS app "TA Signals" here: https://github.com/iamgabrielma/TA-Signals
