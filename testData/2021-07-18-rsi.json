@@ -3,32 +3,32 @@
         "id": 0,
         "ticker": "AAPL",
         "rsi": "47.18",
-        "ema100": "129.2",
-        "ema200": "126.96",
+        "ema100": "",
+        "ema200": "",
         "signal": "Neutral"
     },
     {
         "id": 1,
         "ticker": "AMD",
         "rsi": "7.28",
-        "ema100": "81.67",
-        "ema200": "84.73",
+        "ema100": "",
+        "ema200": "",
         "signal": "Buy"
     },
     {
         "id": 2,
         "ticker": "RTX",
         "rsi": "9.64",
-        "ema100": "82.32",
-        "ema200": "74.8",
+        "ema100": "",
+        "ema200": "",
         "signal": "Buy"
     },
     {
         "id": 3,
         "ticker": "TME",
         "rsi": "14.79",
-        "ema100": "18.63",
-        "ema200": "18.96",
+        "ema100": "",
+        "ema200": "",
         "signal": "Buy"
     }
 ]
