@@ -18,6 +18,7 @@ yfin.pdr_override()
 data_source = ""
 _debug_show_details = False
 _debug_print_date_in_json = False
+_debug_is_options = True
 
 df = pd.DataFrame() # Pandas empty dataframe
 
@@ -58,6 +59,12 @@ def calc_sma(ticker, period):
 # 	pass
 
 def calc_rsi(t, ticker_id):
+
+	stockOrOption = ""
+	if _debug_is_options == True:
+		stockOrOption = " - Sell PUT"
+	else:
+		stockOrOption = " - Buy"
 	'''
 	Calculates RSI
 	'''
@@ -123,7 +130,7 @@ def calc_rsi(t, ticker_id):
 	#elif latest_rsi_value < oversold:
 		
 		stockDictionary['signal'] = 'Buy'
-		print(t + ' RSI: ' + str(latest_rsi_value) + ' - Buy')
+		print(t + ' RSI: ' + str(latest_rsi_value) + stockOrOption) # Testing _debug_is_options
 	else:
 		#print(type(latest_rsi_value))
 		#print(type(oversold))
