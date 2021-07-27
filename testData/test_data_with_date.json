@@ -1,0 +1,63 @@
+[
+    {
+        "status": "2021-07-27",
+        "data": [
+        {
+            "id": 0,
+            "ticker": "AAPL",
+            "rsi": "76.32",
+            "ema100": "130.56",
+            "ema200": "127.9",
+            "signal": "Sell"
+        },
+        {
+            "id": 1,
+            "ticker": "AMD",
+            "rsi": "78.52",
+            "ema100": "82.0",
+            "ema200": "84.89",
+            "signal": "Sell"
+        },
+        {
+            "id": 2,
+            "ticker": "RTX",
+            "rsi": "62.72",
+            "ema100": "82.95",
+            "ema200": "75.59",
+            "signal": "Neutral"
+        },
+        {
+            "id": 3,
+            "ticker": "PLTR",
+            "rsi": "55.86",
+            "ema100": "23.24",
+            "ema200": "23.06",
+            "signal": "Neutral"
+        },
+        {
+            "id": 4,
+            "ticker": "DIDI",
+            "rsi": "7.31",
+            "ema100": "nan",
+            "ema200": "nan",
+            "signal": "Buy"
+        },
+        {
+            "id": 5,
+            "ticker": "BABA",
+            "rsi": "9.83",
+            "ema100": "222.03",
+            "ema200": "244.27",
+            "signal": "Buy"
+        },
+        {
+            "id": 6,
+            "ticker": "TME",
+            "rsi": "7.67",
+            "ema100": "17.7",
+            "ema200": "18.86",
+            "signal": "Buy"
+        }
+    ]
+  }
+]
